@@ -78,35 +78,35 @@ class Survey extends React.Component{
 
         if(this.state.studentName === '' && this.state.isSubmitted === false){
             studentName = <div>
-                <h3>Hey Student, let us know your name</h3>
+                <h2>Hey Student, let us know your name</h2>
                 <form onSubmit={this.nameSubmit}>
                     <input className="input_recv" type="text" ref="name"  placeholder="Enter your name:"  />
                 </form>
             </div>;
 
         }else if (this.state.studentName !== '' && this.state.isSubmitted === false){
-            studentName = <h1>Welcome to Survey, {this.state.studentName}</h1>
+            studentName = <h2>Welcome to Survey, {this.state.studentName}</h2>
             questions = <div>
-                <h2>Here are some questions:</h2>
+                <h2>Here are some questions for you:</h2>
                 <form onSubmit={this.questionSubmit}>
                     <div className="card">
                         <label>What kind of courses you like the most</label>
                         <hr />
-                        <input onChange={this.answerSelected} type="radio" name="answer1" value="Technlogy" />Technlogy
+                        <input onChange={this.answerSelected} type="radio" name="answer1" value="Technlogy" required />Technlogy
                         <input onChange={this.answerSelected} type="radio" name="answer1" value="Design" />Design
                         <input onChange={this.answerSelected} type="radio" name="answer1" value="Marketing" />Marketing
                     </div>
                     <div className="card">
                         <label>You are a:</label>
                         <hr />
-                        <input onChange={this.answerSelected} type="radio" name="answer2" value="Student" />Student
+                        <input onChange={this.answerSelected} type="radio" name="answer2" value="Student"  required/>Student
                         <input onChange={this.answerSelected} type="radio" name="answer2" value="Lookin_for_a_job" />Looking for a job
                         <input onChange={this.answerSelected} type="radio" name="answer2" value="Update_job_role" />Update job role
                     </div>
                     <div className="card">
                         <label>Are online courses helpful?</label>
                         <hr />
-                        <input onChange={this.answerSelected} type="radio" name="answer3" value="yes" />yes
+                        <input onChange={this.answerSelected} type="radio" name="answer3" value="yes" required/>yes
                         <input onChange={this.answerSelected} type="radio" name="answer3" value="no" />no
                         <input onChange={this.answerSelected} type="radio" name="answer3" value="maybe" />maybe
                     </div>
